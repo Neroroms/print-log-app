@@ -1,0 +1,26 @@
+# Default values for helm.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+container:
+  repository: streamtank/print-log-only
+  tag: latest
+  pullPolicy: always
+
+initContainer: 
+  repository: streamtank/print-log-init-container
+  tag: latest
+  pullPolicy: always
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+
