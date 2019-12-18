@@ -1,0 +1,15 @@
+{
+  "name": "print-log-init-container",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/node": "^12.12.14",
+    "typescript": "^3.7.3"
+  }
+}
