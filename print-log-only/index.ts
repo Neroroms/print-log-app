@@ -50,7 +50,13 @@ http.createServer(function (req, res) {
 
     case ("/"):
       console.log("I'm on. ヾ(＾∇＾)");
-      res.end("We're ready. ");
+
+      var useText: String = "/hell-world: print hello world \n" +
+                            "/spam-log: Spam log (Single line) \n" +
+                            "/multi-line-single-log: Print multiline single log (One time) \n" +
+                            "/multi-line-spam-log: Spam multiline single log"
+
+      res.end(useText);
       break;
   };
 
