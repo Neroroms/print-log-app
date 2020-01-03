@@ -1,27 +1,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "helm.fullname" . }}
+  name: {{ include "print-log-only.fullname" . }}
   labels:
-{{ include "helm.labels" . | indent 4 }}
+{{ include "print-log-only.labels" . | indent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app.kubernetes.io/name: {{ include "helm.name" . }}
+      app.kubernetes.io/name: {{ include "print-log-only.name" . }}
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: {{ include "helm.name" . }}
+        app.kubernetes.io/name: {{ include "print-log-only.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
       initContainers:
         - name: print-log-init-container
           image: "{{ .Values.initContainer.repository }}:{{ .Values.initContainer.tag }}"
+          imagePullPolicy: {{ .Values.initContainer.pullPolicy }}
       containers:
         - name: print-log-only
           image: "{{ .Values.container.repository }}:{{ .Values.container.tag }}"
+          imagePullPolicy: {{ .Values.container.pullPolicy }}
           ports:
             - name: http
               containerPort: 80
