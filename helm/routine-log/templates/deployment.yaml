@@ -22,7 +22,7 @@ spec:
       containers:
         - name: routine-log
           image: "{{ .Values.container.repository }}:{{ .Values.container.tag }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          imagePullPolicy: {{ .Values.container.pullPolicy }}
           ports:
             - name: http
               containerPort: 80
