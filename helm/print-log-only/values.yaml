@@ -1,4 +1,4 @@
-# Default values for helm.
+# Default values for print-log-only.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -7,12 +7,12 @@ replicaCount: 1
 container:
   repository: streamtank/print-log-only
   tag: latest
-  pullPolicy: always
+  pullPolicy: Always
 
 initContainer: 
   repository: streamtank/print-log-init-container
   tag: latest
-  pullPolicy: always
+  pullPolicy: Always
 
 nameOverride: ""
 fullnameOverride: ""
