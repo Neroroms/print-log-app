@@ -63,3 +63,5 @@ http.createServer(function (req, res) {
   console.log("It's done. (≧∀≦)ゞ")
 
 }).listen(port);
+
+console.log('Server start at ' + port)
