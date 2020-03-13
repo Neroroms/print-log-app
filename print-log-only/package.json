@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/node": "^12.12.14",
+    "env-var": "^6.0.4",
     "typescript": "^3.7.3"
   }
 }
