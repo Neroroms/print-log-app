@@ -62,6 +62,8 @@ http.createServer(function (req, res) {
 
     case ('/get-env'):
       console.log("env: " + env.get('TEST_ENV'))
+
+      res.end("env: " + env.get('TEST_ENV'))
       break;
   };
 
