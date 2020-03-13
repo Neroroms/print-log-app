@@ -1,5 +1,5 @@
 import http = require('http');
-import env = require('env-var')
+import * as env from 'env-var'
 
 var port = process.env.port || 80;
 
@@ -62,9 +62,11 @@ http.createServer(function (req, res) {
       break;
 
     case ('/get-env'):
-      console.log("env: " + env.get('TEST_ENV').asString())
+      const testEnv = env.get("TEST_ENV").asString()
 
-      res.end("env: " + env.get('TEST_ENV').asString())
+      console.log(testEnv)
+
+      res.end("TEST_ENV: " + testEnv)
       break;
   };
 
