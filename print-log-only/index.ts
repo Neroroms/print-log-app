@@ -55,13 +55,16 @@ http.createServer(function (req, res) {
       var useText: String = "/hell-world: print hello world \n" +
                             "/spam-log: Spam log (Single line) \n" +
                             "/multi-line-single-log: Print multiline single log (One time) \n" +
-                            "/multi-line-spam-log: Spam multiline single log"
+                            "/multi-line-spam-log: Spam multiline single log \n" +
+                            "/get-env: get TEST_ENV value"
 
       res.end(useText);
       break;
 
     case ('/get-env'):
       console.log("env: " + env.get('TEST_ENV'))
+
+      res.end("env: " + env.get('TEST_ENV'))
       break;
   };
 
