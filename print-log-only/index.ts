@@ -1,4 +1,5 @@
 import http = require('http');
+import env = require('env-var')
 
 var port = process.env.port || 80;
 
@@ -57,6 +58,10 @@ http.createServer(function (req, res) {
                             "/multi-line-spam-log: Spam multiline single log"
 
       res.end(useText);
+      break;
+
+    case ('/get-env'):
+      console.log("env: " + env.get('TEST_ENV'))
       break;
   };
 
